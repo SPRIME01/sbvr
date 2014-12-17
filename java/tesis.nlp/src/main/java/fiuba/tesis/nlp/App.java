@@ -42,7 +42,7 @@ public class App
     	//String text = "rental car has fuel level";
     	//String text = "If the renter who is responsible for a rental requests a price conversion for the rental then it is " +
     	//		"obligatory that the rental price of the rental is converted to the currency of the price conversion";
-    	String text = "the renter who is responsible for a rental requests a price conversion for the rental";
+    	String text = "rental has drop-off branch";
 //    	// creates a StanfordCoreNLP object, with POS tagging, lemmatization, NER, parsing, and coreference resolution 
         Properties props = new Properties();
         props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse, dcoref");
