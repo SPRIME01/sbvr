@@ -3,6 +3,7 @@ package fiuba.tesis.nlp.parser;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -35,9 +36,7 @@ public class SbvrParser {
 	public SbvrParser() throws XPathExpressionException {
 		terms = new ArrayList<String>();
 		
-		List<BaseTermExtractor> extractors = new ArrayList<BaseTermExtractor>();
-		extractors.add(new NounTermExtractor());
-		extractors.add(new AdjectiveTermExtractor());
+		List<BaseTermExtractor> extractors = Arrays.asList(new NounTermExtractor(), new AdjectiveTermExtractor());
 		extractorStrategy = new ExtractorStrategy(extractors);
 		
 		xmlConverter = new XmlConverter();
