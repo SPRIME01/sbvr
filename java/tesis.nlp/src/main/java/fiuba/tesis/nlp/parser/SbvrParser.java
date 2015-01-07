@@ -22,6 +22,7 @@ import edu.stanford.nlp.util.CoreMap;
 import fiuba.tesis.nlp.XmlConverter;
 import fiuba.tesis.nlp.parser.extractors.AdjectiveTermExtractor;
 import fiuba.tesis.nlp.parser.extractors.BaseTermExtractor;
+import fiuba.tesis.nlp.parser.extractors.ClausalPassiveSubjectTermExtractor;
 import fiuba.tesis.nlp.parser.extractors.ExtractorStrategy;
 import fiuba.tesis.nlp.parser.extractors.NounTermExtractor;
 
@@ -36,7 +37,10 @@ public class SbvrParser {
 	public SbvrParser() throws XPathExpressionException {
 		terms = new ArrayList<String>();
 		
-		List<BaseTermExtractor> extractors = Arrays.asList(new NounTermExtractor(), new AdjectiveTermExtractor());
+		List<BaseTermExtractor> extractors = Arrays.asList(
+				new ClausalPassiveSubjectTermExtractor(),
+				new NounTermExtractor(), 
+				new AdjectiveTermExtractor());
 		extractorStrategy = new ExtractorStrategy(extractors);
 		
 		xmlConverter = new XmlConverter();
